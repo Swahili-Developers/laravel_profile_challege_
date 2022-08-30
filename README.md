@@ -15,3 +15,10 @@ This is a simple web app that that displays user fullname,email and phone number
 1. laravel 8.23
 2. php version 8.1
 3. php library for handling vcard https://github.com/jeroendesloovere
+
+
+> Data can be generated from Seeding
+
+run
+
+php artisan db:seed --class=UserSeeder
