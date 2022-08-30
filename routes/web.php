@@ -21,3 +21,5 @@ Route::get('profile', function () {
 Route::get('/',[UserController::class,'getContacts']);
 
 Route::get('profile/{id}/show',[UserController::class,'viewContacts']);
+
+Route::post('save',[UserController::class,'store']);

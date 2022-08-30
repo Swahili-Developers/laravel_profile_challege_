@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+REV:2022-08-30T11:35:31Z
+N;CHARSET=utf-8:Mr. Raoul Jerde I;keanu.schimmel@example.com;193-010-1556;;
+ 
+FN;CHARSET=utf-8:keanu.schimmel@example.com 193-010-1556 Mr. Raoul Jerde I
+ 
+ORG;CHARSET=utf-8:Swahili Developer
+TITLE;CHARSET=utf-8:Web Developer
+EMAIL;INTERNET:keanu.schimmel@example.com
+TEL;WORK:193-010-1556
+ADR;WORK;POSTAL;CHARSET=utf-8:;;street;worktown;;workpostcode;Belgium
+LABEL;work;CHARSET=utf-8:tabata, segerea, ubungo ternet
+END:VCARD

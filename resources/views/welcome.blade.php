@@ -13,7 +13,11 @@
   <body class="">
     <div class="row">
         <div class="col-md-6 mx-auto m-5">
-            <form action="">
+            <form action="{{url('save')}}" method="post">
+              @csrf
+              <input type="text" name="name" value="{{$detail->name}}" hidden>
+              <input type="text" name="email" value="{{$detail->email}}" hidden>
+              <input type="text" name="phone_no" value="{{$detail->phone_no}}" hidden>
                 <div class="card mx-auto" style="width: 18rem;">
                     <div class="card-body">
                         <div class="d-flex justify-content-center p-4">
@@ -23,7 +27,7 @@
                       <h6 class="card-subtitle mb-2 text-muted text-center">{{$detail->email}}</h6>
                       <h6 class="card-subtitle mb-2 text-muted text-center">{{$detail->phone_no}}</h6>
                       <a href="{{url('/')}}" class="btn btn-danger m-4">back</a>
-                      <a href="#" class="btn btn-primary">Add Contact</a>
+                      <input type="submit" class="btn btn-primary" value="Add Contact">
 
                     </div>
                   </div>
