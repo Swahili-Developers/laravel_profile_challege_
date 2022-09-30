@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +19,11 @@ Route::get('profile', function () {
     return view('welcome');
 });
 
-Route::get('/',[UserController::class,'getContacts']);
 
-Route::get('profile/{id}/show',[UserController::class,'viewContacts']);
+Route::get('pdf', [UserController::class, 'printPdf']);
 
-Route::post('save',[UserController::class,'store']);
+Route::get('/', [UserController::class, 'getContacts']);
+
+Route::get('profile/{id}/show', [UserController::class, 'viewContacts']);
+
+Route::post('save', [UserController::class, 'store']);

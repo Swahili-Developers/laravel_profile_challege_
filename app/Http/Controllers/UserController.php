@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use JeroenDesloovere\VCard\VCard;
 use Illuminate\Http\Request;
+use Dompdf\Dompdf;
 
 class UserController extends Controller
 {
@@ -29,7 +30,7 @@ class UserController extends Controller
         $email = $request->email;
         $phone_no = $request->phone_no;
 
-       // dd();
+        // dd();
 
         // $fullname = 'fullname';
         // $email = 'email@email.com';
@@ -50,6 +51,23 @@ class UserController extends Controller
         // return vcard as a string
         //return $vcard->getOutput();
 
-        
+
+    }
+
+    public function printPdf()
+    {
+        $contacts = User::all();
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('index', compact('contacts')));
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('demo.pdf', ['Attachment' => false]);
     }
 }
